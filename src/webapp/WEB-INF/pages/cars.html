@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
 </head>
 <body>
-<h1>Список машин</h1>
+<h1>CarList</h1>
 <table border="1">
     <thead>
     <tr>
-        <th>Марка</th>
-        <th>Модель</th>
-        <th>Год</th>
+        <th>Model</th>
+        <th>Color</th>
+        <th>Year</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="car: ${cars}">
-        <td th:text="${car.model}">Модель</td>
-        <td th:text="${car.color}">Цвет</td>
-        <td th:text="${car.year}">Год</td>
+        <td th:text="${car.model}">Model</td>
+        <td th:text="${car.color}">Color</td>
+        <td th:text="${car.year}">Year</td>
     </tr>
     </tbody>
 </table>
