@@ -17,18 +17,13 @@ public class CarServiceImpl implements CarService {
         cars.add(new Car("Mercedes", "green" , 2024));
         cars.add(new Car("Ford", "red" , 2025));
     }
-    @Override
-    public List<Car> getAllCars() {
-        return cars;
-    }
 
     @Override
-    public List<Car> getCars(int count) {
-
-        if (count > cars.size()) {
-            count = cars.size();
+    public List<Car> getCars(Integer count) {
+        if (count == null || count >= 5) {
+            return cars;
+        } else {
+            return cars.subList(0, count);
         }
-
-        return cars.subList(0, count);
     }
 }
